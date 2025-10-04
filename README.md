@@ -1,12 +1,12 @@
 # VisionTransformer-and-SAM2-on-CIFAR10
-Vision Transformer on CIFAR-10
+# 🎯 Vision Transformer on CIFAR-10
 Assignment: Q1 — Vision Transformer on CIFAR-10 (PyTorch)
 Implementation of a Vision Transformer (ViT) for CIFAR-10 image classification, based on the paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" (Dosovitskiy et al., ICLR 2021).
 ```python
 Overview
 This project implements a compact Vision Transformer trained on CIFAR-10 with various regularization techniques and training tricks to maximize test accuracy.
-Architecture Components
 
+Architecture Components
 Patch Embedding: Convolutional layer to split images into patches and project to embedding dimension
 CLS Token: Learnable classification token prepended to sequence
 Positional Embeddings: Learnable position encodings for spatial information
@@ -15,29 +15,28 @@ Classification Head: Linear layer that classifies from the CLS token representat
 
 How to Run in Google Colab
 Step 1: Setup Environment
-python# No additional installations needed - uses standard PyTorch
+python   # No additional installations needed - uses standard PyTorch
 import torch
 print(f"PyTorch version: {torch.__version__}")
 print(f"CUDA available: {torch.cuda.is_available()}")
-Step 2: Upload and Run Code
 
+Step 2: Upload and Run Code
 Open Google Colab
 Upload the vit_cifar10.py file or copy-paste the code into a cell
 Run the cell (the dataset will auto-download on first run)
 
 Step 3: Monitor Training
 The script will:
-
 Download CIFAR-10 dataset automatically
 Train the model with progress output each epoch
 Apply early stopping when validation accuracy plateaus
 Display a training/test accuracy curve at the end
-
 Expected Runtime: ~15-25 minutes on Colab GPU (T4)
+
 Best Model Configuration
 HyperparameterValueDescriptionPatch Size4×4Divides 32×32 images into 8×8 = 64 patchesEmbedding Dim128Feature dimension for tokensDepth6Number of Transformer encoder layersAttention Heads4Multi-head attention headsMLP Ratio2.0Hidden dimension multiplier for MLP blocksDropout0.1Dropout rateBatch Size128Training batch sizeOptimizerAdamWWith weight decay 0.05Learning Rate3e-4Base learning rateLR ScheduleWarmup (5 ep) + CosineWarmup then cosine annealingEpochs120Maximum epochs (with early stopping)Label Smoothing0.1Smoothing for cross-entropy lossEMA0.999Exponential Moving Average of weightsMixupα=0.2Data augmentation mixing parameter
-Data Augmentation
 
+Data Augmentation
 Random resized crop (scale 0.8-1.0)
 Random horizontal flip
 Random erasing (p=0.25)
@@ -53,6 +52,7 @@ Best accuracy typically achieved around epochs 60-100
 Results may vary slightly due to random initialization and augmentation
 
 Key Implementation Details
+
 1. Vision Transformer Architecture
 pythonInput Image (3×32×32)
     ↓ Conv2d patch embedding (4×4 patches)
@@ -69,8 +69,8 @@ Encoded Sequence (65×128)
 CLS Representation (128)
     ↓ Linear classification head
 Output Logits (10 classes)
-2. Training Techniques
 
+2. Training Techniques
 Mixup: Mixes pairs of images and labels for better generalization
 EMA: Maintains exponential moving average of model weights
 Label Smoothing: Reduces overconfidence in predictions
@@ -78,7 +78,6 @@ Warmup + Cosine LR: Gradual warmup followed by cosine decay
 Early Stopping: Stops when validation accuracy doesn't improve
 
 3. Regularization
-
 Weight decay (0.05)
 Dropout (0.1)
 Random erasing augmentation
@@ -100,9 +99,9 @@ Code Structure
 │   ├── Evaluate on test set
 │   └── Early stopping logic
 └── Visualization (Accuracy curves)
+
 Dependencies
 All dependencies are pre-installed in Google Colab:
-
 PyTorch >= 1.10
 torchvision
 numpy
@@ -110,12 +109,10 @@ matplotlib
 tqdm
 
 References
-
 Paper: Dosovitskiy, A., et al. (2021). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. ICLR 2021.
 Dataset: CIFAR-10 (Krizhevsky, 2009)
 
-Tips for Further Improvement
-
+🔮 Tips for Further Improvement
 Increase model capacity: Try larger embedding dimensions (192, 256) or more layers
 Data augmentation: Add AutoAugment, CutMix, or RandAugment
 Training longer: Increase epochs to 200-300 with adjusted patience
@@ -128,7 +125,7 @@ Note: This is a lightweight ViT designed for CIFAR-10's small 32×32 images. For
 ```
 
 # 🎯 Text-Driven Image Segmentation with SAM 2
-Automatic object segmentation powered by **Meta’s Segment Anything Model 2 (SAM 2)**. Segment objects in images using plain text prompts
+Assignment: Q2 Automatic object segmentation powered by **Meta’s Segment Anything Model 2 (SAM 2)**. Segment objects in images using plain text prompts
 
 ## 🚀 Quick Start
 
