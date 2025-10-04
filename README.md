@@ -1,4 +1,4 @@
-# VisionTransformer-and-SAM2-on-CIFAR10
+# VisionTransformer-and-SAM2
 # 🎯 Vision Transformer on CIFAR-10
 Assignment: Q1 — Vision Transformer on CIFAR-10 (PyTorch)
 Implementation of a Vision Transformer (ViT) for CIFAR-10 image classification, based on the paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" (Dosovitskiy et al., ICLR 2021).
