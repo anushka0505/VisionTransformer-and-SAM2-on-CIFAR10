@@ -2,7 +2,7 @@
 
 
 # 🎯 Text-Driven Image Segmentation with SAM 2
-Automatic object segmentation powered by **Meta’s Segment Anything Model 2 (SAM 2)**. Segment objects in images using **plain text prompts
+Automatic object segmentation powered by **Meta’s Segment Anything Model 2 (SAM 2)**. Segment objects in images using plain text prompts
 
 ## 🚀 Quick Start
 
@@ -87,24 +87,21 @@ Example Text Prompts:
 "bottle"   # Segments bottles
 "laptop"   # Segments electronics
 
-<details> <summary>⚠️ Limitations</summary>
+⚠️ Limitations
 Simplified Prompt Generation – Uses geometric heuristics, not semantic understanding
 No Grounding Model – Text doesn’t guide point placement semantically
 Object Localization – May miss off-center or small objects
 Performance Constraints – GPU required for reasonable speed (~2-5 sec/image)
 No Video Support – Only static image segmentation
-</details>
 
 📁 Output Files
 
 mask_[your_prompt].png – Binary segmentation mask
 overlay_[your_prompt].png – Original image with mask overlay
 
-<details> <summary>🔮 Future Improvements</summary>
+🔮 Future Improvements
 Integrate GroundingDINO for semantic text-to-box conversion
 Add CLIPSeg for text-guided point selection
 Multi-object detection & segmentation
 Video segmentation with temporal propagation
 Support complex queries with spatial relationships
-
-</details> ```
