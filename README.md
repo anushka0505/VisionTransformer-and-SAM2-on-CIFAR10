@@ -11,8 +11,8 @@ Automatic object segmentation powered by **Meta’s Segment Anything Model 2 (SA
 # 2. Upload your image
 # 3. Enter text prompt: "cat", "person", "car", etc.
 # 4. Get segmentation results!
-📋 Overview
 
+📋 Overview
 Upload an image and enter a text prompt. The system automatically:
 
 🔍 Generates intelligent prompt points/boxes
