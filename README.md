@@ -125,7 +125,7 @@ Note: This is a lightweight ViT designed for CIFAR-10's small 32×32 images. For
 ```
 
 # 🎯 Text-Driven Image Segmentation with SAM 2
-Assignment: Q2 Automatic object segmentation powered by **Meta’s Segment Anything Model 2 (SAM 2)**. Segment objects in images using plain text prompts
+Assignment: Q2 For a single image, perform text-prompted segmentation of a chosen object using SAM 2.
 
 ## 🚀 Quick Start
 
