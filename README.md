@@ -102,30 +102,31 @@ Shows a balanced and regularized training pattern with good generalization.
 - Integrate **LayerScale or DropPath** for stronger regularization  
 
 ---
-📊 Short Analysis (Bonus)
+🧠 Short Analysis (Bonus)
 🔍 Model Choices
 
-Patch Size: 4×4 for fine-grained spatial encoding on 32×32 CIFAR-10 images.
-Depth & Heads: 6×4 offered good trade-off between compute and accuracy.
-Embed Dim (128): Captured local-global relations effectively.
+🧩 Patch Size: 4×4 — captures fine spatial features on small 32×32 CIFAR-10 images.
+🧱 Depth & Heads: 6 layers and 4 heads — balanced accuracy vs. compute.
+🔡 Embedding Dim (128): captures both local & global relationships efficiently.
+⚙️ Regularization & Training Tricks
+🧊 Label Smoothing (0.1): prevents overconfidence in predictions.
+🎛️ Mixup (α=0.2): improved generalization by blending examples.
+🔁 EMA (Exponential Moving Average): stabilized weights and smoother convergence.
+🌈 Cosine LR + Warmup: smooth start and adaptive decay of learning rate.
+⏹️ Early Stopping (patience=5): halted training once accuracy plateaued.
 
-⚙️ Regularization & Tricks
-
-Label Smoothing (0.1): Reduced overconfidence.
-Mixup Augmentation: Improved generalization (+2–3%).
-EMA (Exponential Moving Average): Smoothed weight updates.
-Cosine LR + Warmup: Enabled stable convergence.
-Early Stopping: Prevented late-epoch overfitting.
-
-🚀 Results Summary
-Model	Best Test Accuracy	Observation
-Baseline ViT	81.7%	Slight overfit after 80+ epochs
-Regularized ViT	79.66%	More stable, balanced training
+📊 Results Comparison
+Model Variant	Best Test Accuracy	Observation
+🧠 Baseline ViT	81.7%	Slight overfitting beyond 80+ epochs
+⚙️ Regularized ViT	79.66%	Stable, consistent convergence
 
 💡 Key Insights
-Regularization stabilized learning and reduced overfitting.
-Increasing patch overlap or depth may cross 82%, but with longer training time.
-Further improvements require semantic augmentation or adaptive patch embeddings.
+
+Regularization improved training stability and reduced overfitting.
+Smaller patch size offered better fine-grained feature learning.
+Increasing model depth or patch overlap can push accuracy >82%,
+though with longer training and higher GPU cost.
+The chosen setup achieved a strong balance of accuracy, stability, and efficiency.
 
 ## 🖼️ Q2 – Text-Driven Image Segmentation with SAM 2
 
