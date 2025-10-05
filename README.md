@@ -1,5 +1,5 @@
 # 🧠 Vision Transformer (ViT) on CIFAR-10 & Text-Driven Image Segmentation (SAM 2)
-### 🎓 AKTU Deep Learning Assignment – Google Colab Implementation  
+### 🎓 Assignment – Google Colab Implementation  
 **Files included:**  
 - `q1.ipynb` → Vision Transformer (CIFAR-10)  
 - `q2.ipynb` → Text-Driven Segmentation with SAM 2  
