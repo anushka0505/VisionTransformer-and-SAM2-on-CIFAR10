@@ -102,6 +102,30 @@ Shows a balanced and regularized training pattern with good generalization.
 - Integrate **LayerScale or DropPath** for stronger regularization  
 
 ---
+📊 Short Analysis (Bonus)
+🔍 Model Choices
+
+Patch Size: 4×4 for fine-grained spatial encoding on 32×32 CIFAR-10 images.
+Depth & Heads: 6×4 offered good trade-off between compute and accuracy.
+Embed Dim (128): Captured local-global relations effectively.
+
+⚙️ Regularization & Tricks
+
+Label Smoothing (0.1): Reduced overconfidence.
+Mixup Augmentation: Improved generalization (+2–3%).
+EMA (Exponential Moving Average): Smoothed weight updates.
+Cosine LR + Warmup: Enabled stable convergence.
+Early Stopping: Prevented late-epoch overfitting.
+
+🚀 Results Summary
+Model	Best Test Accuracy	Observation
+Baseline ViT	81.7%	Slight overfit after 80+ epochs
+Regularized ViT	79.66%	More stable, balanced training
+
+💡 Key Insights
+Regularization stabilized learning and reduced overfitting.
+Increasing patch overlap or depth may cross 82%, but with longer training time.
+Further improvements require semantic augmentation or adaptive patch embeddings.
 
 ## 🖼️ Q2 – Text-Driven Image Segmentation with SAM 2
 
@@ -212,11 +236,4 @@ Image Size: 1024x768
 | `q2.ipynb` | SAM 2 Text-Driven Image Segmentation |
 | `README.md` | Project Documentation & Results |
 
----
 
-**👩‍💻 Developed by:** Anushka  
-**🎓 Under:** AKTU Curriculum – Data Warehousing & Mining / Deep Learning Assignment  
-**🧩 Platform:** Google Colab  
-**⚙️ Frameworks:** PyTorch, TorchVision, Matplotlib  
-
----
