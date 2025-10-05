@@ -105,28 +105,37 @@ Shows a balanced and regularized training pattern with good generalization.
 🧠 Short Analysis (Bonus)
 🔍 Model Choices
 
-🧩 Patch Size: 4×4 — captures fine spatial features on small 32×32 CIFAR-10 images.
-🧱 Depth & Heads: 6 layers and 4 heads — balanced accuracy vs. compute.
-🔡 Embedding Dim (128): captures both local & global relationships efficiently.
+🧩 Patch Size = 4×4 → captures fine spatial detail on 32×32 images
+
+🧱 Depth = 6 layers & 4 heads → balanced accuracy vs compute cost
+
+🔡 Embedding Dim = 128 → strong local + global representation capacity
+
 ⚙️ Regularization & Training Tricks
-🧊 Label Smoothing (0.1): prevents overconfidence in predictions.
-🎛️ Mixup (α=0.2): improved generalization by blending examples.
-🔁 EMA (Exponential Moving Average): stabilized weights and smoother convergence.
-🌈 Cosine LR + Warmup: smooth start and adaptive decay of learning rate.
-⏹️ Early Stopping (patience=5): halted training once accuracy plateaued.
+
+🧊 Label Smoothing (0.1) → reduces over-confidence
+
+🎛️ Mixup (α = 0.2) → better generalization
+
+🔁 EMA → stabilizes updates and smoother convergence
+
+🌈 Cosine LR + Warmup → gradual learning rate decay
+
+⏹️ Early Stopping (patience = 5) → avoids wasted epochs after plateau
 
 📊 Results Comparison
 Model Variant	Best Test Accuracy	Observation
-🧠 Baseline ViT	81.7%	Slight overfitting beyond 80+ epochs
-⚙️ Regularized ViT	79.66%	Stable, consistent convergence
-
+🧠 Baseline ViT	81.7 %	Slight overfitting after 80 epochs
+⚙️ Regularized ViT	79.66 %	More stable and consistent training
 💡 Key Insights
 
-Regularization improved training stability and reduced overfitting.
-Smaller patch size offered better fine-grained feature learning.
-Increasing model depth or patch overlap can push accuracy >82%,
-though with longer training and higher GPU cost.
-The chosen setup achieved a strong balance of accuracy, stability, and efficiency.
+Regularization boosted stability and curbed overfitting.
+
+Smaller patch size captured fine details better.
+
+Slight depth increase or overlapping patches could push accuracy > 82 %.
+
+Final setup achieved an optimal balance of accuracy × stability × efficiency.
 
 ## 🖼️ Q2 – Text-Driven Image Segmentation with SAM 2
 
